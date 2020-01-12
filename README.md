@@ -1,13 +1,17 @@
 # Fuzzy C Means
+
 This project presents an implementation of the Fuzzy C-Means clustering algorithm, along with some validity metrics for fuzzy clusterings.
+
+Fuzzy Clustering Validity Measures available:
+
+- Generalized Silhouette
+- Fuzzy Partition Coefficient
+- Fuzzy Entropy
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install fuzzy-c-means.
-
-```bash
-pip install fuzzy-c-means
-```
+Download this repo and import it to the desired directory.
+Package in PyPi will be available soon.
 
 ## Usage
 
@@ -39,20 +43,19 @@ def plot_data_with_centroids(X,fcm_centers,fcm_labels):
   
 start_time = time.time()
 
-fcm_vanilla = FuzzyCMeans(m=1.5)
-fcm_vanilla.fit(dataset=X,n_clusters=3,tolerance=0.001,verbose=1,max_iterations=100)
-fcm_vanilla_centers = fcm_vanilla.centroids
-fcm_vanilla_labels  = fcm_vanilla.u_membership.argmax(axis=1)
+fcm = FuzzyCMeans(m=1.5)
+fcm.fit(dataset=X,n_clusters=3,tolerance=0.001,verbose=1,max_iterations=100)
+fcm_centers = fcm.centroids
+fcm_labels  = fcm.u_membership.argmax(axis=1)
 
 print('')
-plot_data_with_centroids(X,fcm_vanilla_centers,fcm_vanilla_labels)
+plot_data_with_centroids(X,fcm_centers,fcm_labels)
 d_time = (time.time() - start_time)
 print('')
 print("--- Total run time: %.3f seconds ---" % d_time)
 print('')
 print('Final centroids: ')
-print(fcm_vanilla_centers)
-  
+print(fcm_centers)  
 
 ```
 
