@@ -62,5 +62,8 @@ print(fcm_centers)
 ## Contributing
 Pull requests are more than welcome! For major changes, please open an issue first to discuss what you would like to change.
 
+
+## Future Work
+An Optimization of Fuzzy Clustering is under development and can be seen in the file Hybrid_FCM_PSO_Clustering. Optimization process is done using the Particle Swarm Optimization algorithm to mitigate the chance of a bad clustering initialization.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
